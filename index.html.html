@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site acessível sobre Type O Negative por Kailani: história, curiosidades, discografia, galeria e vídeos." />
+  <title>Type O Negative — Site Acessível por Kailani</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --fg: #d6ffd6;
+      --accent: #00ff66;
+      --muted: #6be28d;
+      --card: #0e0e0e;
+      --focus: #ffffff;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --fg: #111111;
+        --accent: #0a7f3f;
+        --muted: #0a7f3f;
+        --card: #f2f2f2;
+        --focus: #000000;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.7;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+    header { background: linear-gradient(180deg, #0a0a0a, var(--card)); border-bottom: 1px solid #1a1a1a; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .brand { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand h1 { margin: 0; font-size: clamp(28px, 5vw, 44px); color: var(--accent); letter-spacing: 1px; }
+    .tag { margin: 0; color: var(--muted); font-size: 14px; }
+    nav { margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none; padding: 10px 14px; border-radius: 999px;
+      background: #101010; border: 1px solid #202020; color: var(--fg);
+    }
+    nav a:hover { border-color: var(--accent); }
+    .tools { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .tools button {
+      padding: 8px 12px; border: 1px solid #2a2a2a; background: #121212; color: var(--fg);
+      border-radius: 10px; cursor: pointer;
+    }
+    main { display: grid; gap: 24px; padding-block: 20px; }
+    section {
+      background: var(--card);
+      border: 1px solid #1b1b1b;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    h2 { margin-top: 0; color: var(--accent); font-size: clamp(22px, 3.5vw, 28px); }
+    .grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .card {
+      background: #0b0b0b; border: 1px solid #1a1a1a; border-radius: 14px; padding: 12px;
+    }
+    .gallery {
+      display: grid; gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .gallery figure { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid #1a1a1a; background: #0b0b0b; }
+    .gallery img { width: 100%; height: auto; display: block; }
+    .gallery figcaption { padding: 10px; font-size: 14px; color: var(--muted); }
+    iframe { width: 100%; height: 315px; border: 0; border-radius: 12px; background: #000; }
+    footer { text-align: center; color: var(--muted); border-top: 1px solid #1a1a1a; padding: 30px 16px; }
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: 8px 12px; background: var(--accent); color: #000; border-radius: 8px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header role="banner">
+    <div class="wrap brand">
+      <div>
+        <h1>Type O Negative</h1>
+        <p class="tag">Site acessível criado por Kailani</p>
+      </div>
+      <div class="tools" aria-label="Ferramentas de acessibilidade">
+        <button type="button" id="incFont" aria-label="Aumentar tamanho da fonte">A+</button>
+        <button type="button" id="decFont" aria-label="Diminuir tamanho da fonte">A-</button>
+        <button type="button" id="toggleTheme" aria-pressed="false" aria-label="Alternar contraste">Alto contraste</button>
+      </div>
+    </div>
+    <div class="wrap">
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#discografia">Discografia</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#videos">Vídeos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap" role="main">
+    <section id="sobre" aria-labelledby="h-sobre">
+      <h2 id="h-sobre">Sobre a banda</h2>
+      <p>Type O Negative foi uma banda americana de gothic/doom metal formada no Brooklyn em 1989, liderada por Peter Steele. Famosa pela atmosfera sombria, humor ácido e o baixo verde icônico do vocalista/baixista.</p>
+    </section>
+
+    <section id="curiosidades" aria-labelledby="h-curios">
+      <h2 id="h-curios">Curiosidades</h2>
+      <ul>
+        <li>Apelidados de <strong>“Drab Four”</strong> — uma brincadeira com os “Fab Four”.</li>
+        <li>O verde é a cor-símbolo da banda, presente em capas, luzes de palco e no baixo de Peter.</li>
+        <li>Peter Steele posou para a <em>Playgirl</em> em 1995.</li>
+        <li><em>October Rust</em> abre propositalmente com alguns segundos de “silêncio”.</li>
+      </ul>
+    </section>
+
+    <section id="discografia" aria-labelledby="h-discog">
+      <h2 id="h-discog">Discografia (seleção)</h2>
+      <div class="grid">
+        <div class="card" role="listitem"><strong>Slow, Deep and Hard</strong> (1991)</div>
+        <div class="card" role="listitem"><strong>Bloody Kisses</strong> (1993)</div>
+        <div class="card" role="listitem"><strong>October Rust</strong> (1996)</div>
+        <div class="card" role="listitem"><strong>World Coming Down</strong> (1999)</div>
+        <div class="card" role="listitem"><strong>Life Is Killing Me</strong> (2003)</div>
+        <div class="card" role="listitem"><strong>Dead Again</strong> (2007)</div>
+      </div>
+    </section>
+
+    <section id="galeria" aria-labelledby="h-galeria">
+      <h2 id="h-galeria">Galeria (fotos reais)</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Peter_Steele_2007.jpg" alt="Peter Steele cantando e tocando baixo no palco, 2007" loading="lazy" />
+          <figcaption>Peter Steele ao vivo (2007).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/TypeONegative2007.jpg" alt="A banda Type O Negative posando junta em 2007" loading="lazy" />
+          <figcaption>Type O Negative — foto promocional (2007).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Peter_Steele_2004.jpg" alt="Retrato de Peter Steele em 2004" loading="lazy" />
+          <figcaption>Retrato de Peter Steele (2004).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Peter_Steele_live.jpg" alt="Peter Steele tocando ao vivo em show" loading="lazy" />
+          <figcaption>Performance ao vivo.</figcaption>
+        </figure>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">Imagens servidas pelo Wikimedia Commons (licenças públicas/CC) — ideais para uso em site.</p>
+    </section>
+
+    <section id="videos" aria-labelledby="h-videos">
+      <h2 id="h-videos">Vídeos</h2>
+      <p>Clássico da banda:</p>
+      <iframe
+        src="https://www.youtube.com/embed/2aQVCYJ3j8E"
+        title="Type O Negative - Black No.1 (vídeo do YouTube)"
+        allowfullscreen
+      ></iframe>
+      <p style="font-size: 14px; color: var(--muted);">Ative as legendas no player (ícone CC) se disponíveis.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>Site desenvolvido por Kailani — 2025</p>
+      <p><a href="#topo">Voltar ao topo</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const html = document.documentElement;
+      const btnInc = document.getElementById('incFont');
+      const btnDec = document.getElementById('decFont');
+      const btnTheme = document.getElementById('toggleTheme');
+      let base = 100;
+
+      function setFont(percent) {
+        html.style.fontSize = percent + '%';
+      }
+      btnInc.addEventListener('click', () => { base = Math.min(180, base + 10); setFont(base); });
+      btnDec.addEventListener('click', () => { base = Math.max(70, base - 10); setFont(base); });
+
+      btnTheme.addEventListener('click', () => {
+        const pressed = btnTheme.getAttribute('aria-pressed') === 'true';
+        btnTheme.setAttribute('aria-pressed', String(!pressed));
+        // Alterna rapidamente entre tema escuro/claro invertendo as variáveis
+        if (!pressed) {
+          document.body.style.backgroundColor = '#ffffff';
+          document.body.style.color = '#111111';
+        } else {
+          document.body.style.backgroundColor = '';
+          document.body.style.color = '';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
